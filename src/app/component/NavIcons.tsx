@@ -24,7 +24,7 @@ function NavIcons() {
     
   
   return (
-    <div className="flex items-center gap-4 xl:gap-6 relative">
+    <div className="flex items-center gap-4 relative">
       <Image
         src={"/profile.png"}
         alt="profile"
