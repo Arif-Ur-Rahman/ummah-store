@@ -8,16 +8,23 @@ import CartModal from "./CartModal";
 
 function NavIcons() {
   const [IsProfileOpen, setIsProfileOpen] = useState(false);
+  const [IsNotificationOpen, setIsNotificationOpen] = useState(false);
   const [IsCartOpen, setIsCartOpen] = useState(false);
     const router = useRouter();
 
-    const isLoggedIn = false
+    const isLoggedIn = true
 
     const hendleProfile = () => {
         if(!isLoggedIn) {
             router.push('/login')
         }
         setIsProfileOpen((prev) => !prev)
+    }
+    const viewNotificationm = () => {
+        if(!isLoggedIn) {
+            router.push('/login')
+        }
+        setIsNotificationOpen((prev) => !prev)
     }
 
     
@@ -45,7 +52,13 @@ function NavIcons() {
         width={22}
         height={22}
         className="cursor-pointer"
+        onClick={viewNotificationm}
       />
+      {IsNotificationOpen && (
+        <div className="absolute p-4 rounded-md top-12 left-[-80px] shadow-2xl text-black text-normal z-20 bg-transparent border border-gray-100 flex flex-col gap-2">
+          <div className="">No new notifications</div>
+        </div>
+      )}
       <div className="relative cursor-pointer">
       <Image
         src={"/cart.png"}
