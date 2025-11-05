@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const slides = [
   {
@@ -35,9 +35,17 @@ const slides = [
 
 function Slider() {
   const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev === slides.length-1 ? 0 : prev + 1));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div className="h-[calc(100vh-80px)] overflow-hidden">
-      <div className="w-max h-full flex transition-all ease-in-out duration-1000">
+      <div className="w-max h-full flex transition-all ease-in-out duration-1000"
+        style={{ transform: `translateX(-${current * 100}vw)` }}> 
         {slides.map((slide) => (
           <div
             className={`${slide.bg} w-screen h-full flex flex-col gap-16 xl:flex-row`}
@@ -75,18 +83,19 @@ function Slider() {
         ))}
         {/* Slider Controls */}
         <div className="absolute m-auto left-1/2 bottom-8 gap-4 flex">
-        {slides.map((slide, index) => (
-          <div
-            className={`w-3 h-3 rounded-full ring-1 ring-gray-600 cursor-pointer flex items-center justify-center ${
-              current === index ? "scale-150" : ""
-            }`}
-            key={slide.id}
-          >
-            {current === index && (
-              <div className="w-[6px] h-[6px] rounded-full"></div>
-            )}
-          </div>      
-        ))}
+          {slides.map((slide, index) => (
+            <div
+              className={`w-3 h-3 rounded-full ring-1 ring-gray-600 cursor-pointer flex items-center justify-center ${
+                current === index ? "scale-150" : ""
+              }`}
+              key={slide.id}
+              onClick={() => setCurrent(index)}
+            >
+              {current === index && (
+                <div className="w-[6px] h-[6px] bg-gray-500 rounded-full"></div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </div>
