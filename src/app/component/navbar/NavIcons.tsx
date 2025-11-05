@@ -93,7 +93,7 @@ function NavIcons() {
           onClick={viewNotification}
         />
         <div className="absolute -top-4 -right-4 w-6 h-6 bg-blue-800 rounded-full text-white text-sm flex items-center justify-center font-bold">
-          5
+          3
         </div>
 
         {IsNotificationOpen && <NotificationDropdown />}
