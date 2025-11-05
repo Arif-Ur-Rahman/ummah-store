@@ -29,7 +29,7 @@ export const Navbar = () => {
               </span>
             </div>
           </Link>
-          <div className="hidden xl:flex gap-6 font-medium text-gray-700">
+          <div className="hidden xl:flex gap-6 font-bold text-black">
             <Link href="/">Home</Link>
             <Link href="/shop">Shop</Link>
             <Link href="/deals">Deals</Link>
