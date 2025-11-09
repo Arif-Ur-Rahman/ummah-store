@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 const slides = [
   {
     id: 1,
-    image: "/slides/slide1.png",
+    image: "/slides/headphones/headphone1-removebg-preview.png",
     title: "Spring Sale Collection",
     description: "Up to 50% off!",
     bg: "bg-gradient-to-r from-pink-50 to-yellow-50",
@@ -15,7 +15,7 @@ const slides = [
   },
   {
     id: 2,
-    image: "/slides/slide2.webp",
+    image: "/slides/monitor-removebg-preview.png",
     title: "New Arrivals",
     description:
       "Check out our New Arrivals for the season. Fresh styles and designs just for you!",
@@ -24,7 +24,7 @@ const slides = [
   },
   {
     id: 3,
-    image: "/slides/slide3.webp",
+    image: "/slides/toycar.png",
     title: "Exclusive Offers",
     description:
       "Don't miss our Exclusive Offers on top brands. Limited time only!",
@@ -36,12 +36,12 @@ const slides = [
 function Slider() {
   const [current, setCurrent] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev === slides.length-1 ? 0 : prev + 1));
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrent((prev) => (prev === slides.length-1 ? 0 : prev + 1));
+  //   }, 3000);
+  //   return () => clearInterval(interval);
+  // }, []);
   return (
     <div className="h-[calc(100vh-80px)] overflow-hidden z-10 relative">
       <div className="w-max h-full flex transition-all ease-in-out duration-1000"
