@@ -66,7 +66,7 @@ function NavIcons() {
   }, []);
 
   return (
-    <div className="flex items-center gap-4 relative">
+    <div className="flex items-center gap-4 relative relative z-50">
 
       {/* PROFILE */}
       <div ref={profileRef} className="relative">

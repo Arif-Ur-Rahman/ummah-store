@@ -6,7 +6,7 @@ import React from "react";
 export const CartModal = () => {
   const cartItems = true;
   return (
-    <div className="w-max absolute p-4 rounded-md shadow-2xl border border-gray-100 bg-transparent top-12 right-0 flex flex-col z-20 gap-6">
+    <div className="w-max absolute p-4 rounded-md shadow-2xl border border-gray-100 bg-white top-12 right-0 flex flex-col z-50 gap-6">
       {!cartItems ? (
         <div className="">Cart Is Empty...</div>
       ) : (

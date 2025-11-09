@@ -6,7 +6,7 @@ import { User, Settings, ShoppingBag, LogOut } from "lucide-react";
 
 export default function ProfileDropdown() {
   return (
-    <div className="absolute top-12 left-[-150px] w-56 bg-white shadow-2xl rounded-xl border border-gray-100 z-30 overflow-hidden">
+    <div className="absolute top-12 left-[-150px] w-56 bg-white shadow-2xl rounded-xl border border-gray-100 z-50 overflow-hidden">
 
       {/* Header */}
       <div className="flex items-center gap-3 p-4 border-b border-gray-100">

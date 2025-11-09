@@ -8,7 +8,7 @@ import Menu from "./Menu";
 
 export const Navbar = () => {
   return (
-    <div className="h-20 px-4 md:px-8 xl:px-16 2xl:px-32 shadow-sm border-b bg-white/80 backdrop-blur-md">
+    <div className="h-20 px-4 md:px-8 xl:px-16 2xl:px-32 shadow-sm border-b bg-white/80 backdrop-blur-md relative z-50">
       {/* Mobile */}
       <div className="h-full flex items-center justify-between relative md:hidden">
         <Link href="/">
