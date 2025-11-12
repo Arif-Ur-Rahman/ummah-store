@@ -33,22 +33,33 @@ const slides = [
   },
 ];
 
+const bannerMessages = [
+  "🚚 Free Shipping on purchase over 1000/= BDT",
+  "💵 Cash on Delivery, No advance payment required", 
+  "↩️ We take return if you dont like",
+  "⭐ Premium Quality Products",
+  "🔒 Secure Payment Gateway"
+];
+
 function Slider() {
   const [current, setCurrent] = useState(0);
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrent((prev) => (prev === slides.length-1 ? 0 : prev + 1));
-  //   }, 3000);
-  //   return () => clearInterval(interval);
-  // }, []);
 
   return (
     <div className="h-[calc(100vh-80px)] overflow-hidden z-10 relative">
       {/* Free Shipping Banner */}
       <div className="w-full bg-black text-white py-2 overflow-hidden relative">
-        <div className="whitespace-nowrap animate-marquee">
-          🚚 Free Shipping on purchase over 1000/= BDT • 💵 Cash on Delivery, No advance payment required • ↩️ We take return if you dont like •
+        <div className="flex whitespace-nowrap animate-marquee">
+          {bannerMessages.map((message, index) => (
+            <span key={index} className="mx-8">
+              {message}
+            </span>
+          ))}
+          {/* Duplicate for seamless loop */}
+          {bannerMessages.map((message, index) => (
+            <span key={`dup-${index}`} className="mx-8">
+              {message}
+            </span>
+          ))}
         </div>
       </div>
 
