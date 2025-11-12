@@ -9,18 +9,22 @@
     scrollbar-width: none;
 }
 
-/* Marquee Animation */
+/* Improved Marquee Animation */
 @keyframes marquee {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
 .animate-marquee {
-  animation: marquee 25s linear infinite;
-  display: inline-block;
-  padding-right: 100%; /* This creates space between repetitions */
+  animation: marquee 60s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
