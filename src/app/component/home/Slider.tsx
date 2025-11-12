@@ -42,16 +42,26 @@ function Slider() {
   //   }, 3000);
   //   return () => clearInterval(interval);
   // }, []);
+
   return (
     <div className="h-[calc(100vh-80px)] overflow-hidden z-10 relative">
-      <div className="w-max h-full flex transition-all ease-in-out duration-1000"
-        style={{ transform: `translateX(-${current * 100}vw)` }}> 
+      {/* Free Shipping Banner */}
+      <div className="w-full bg-black text-white py-2 overflow-hidden relative">
+        <div className="whitespace-nowrap animate-marquee">
+          🚚 Free Shipping on purchase over 1000/= BDT • 💵 Cash on Delivery, No advance payment required • ↩️ We take return if you dont like •
+        </div>
+      </div>
+
+      <div 
+        className="w-max h-full flex transition-all ease-in-out duration-1000"
+        style={{ transform: `translateX(-${current * 100}vw)` }}
+      > 
         {slides.map((slide) => (
           <div
             className={`${slide.bg} w-screen h-full flex flex-col gap-16 xl:flex-row`}
             key={slide.id}
           >
-            {/* Text Contant  */}
+            {/* Text Content */}
             <div
               className="h-1/2 xl:w-1/2 xl:h-full flex flex-col items-center justify-center gap-8 2xl:gap-12 text-center"
               key={slide.id}
@@ -69,7 +79,7 @@ function Slider() {
               </Link>
             </div>
 
-            {/* Image Content  */}
+            {/* Image Content */}
             <div className="h-1/2 xl:w-1/2 xl:h-full relative">
               <Image
                 src={slide.image}
@@ -81,6 +91,7 @@ function Slider() {
             </div>
           </div>
         ))}
+        
         {/* Slider Controls */}
         <div className="absolute m-auto left-1/2 bottom-8 gap-4 flex">
           {slides.map((slide, index) => (
