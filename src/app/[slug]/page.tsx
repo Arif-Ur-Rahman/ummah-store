@@ -1,10 +1,21 @@
 import React from 'react'
+import ProductImages from '../component/singlepage/ProductImages'
 
-const slug  = () => {
+const SinglePage  = () => {
   return (
-    <div>slug </div>
+    <div className=''>
+      {/* Image  */}
+      <div className="">
+        <ProductImages />
+
+      </div>
+      {/* Text  */}
+      <div className="">
+
+      </div>
+    </div>
   )
 }
 
-export default slug 
+export default SinglePage 
 
