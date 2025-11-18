@@ -47,11 +47,17 @@ function NavIcons() {
   // **Close dropdowns when clicking outside**
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (profileRef.current && !profileRef.current.contains(event.target as Node)) {
+      if (
+        profileRef.current &&
+        !profileRef.current.contains(event.target as Node)
+      ) {
         setIsProfileOpen(false);
       }
 
-      if (notificationRef.current && !notificationRef.current.contains(event.target as Node)) {
+      if (
+        notificationRef.current &&
+        !notificationRef.current.contains(event.target as Node)
+      ) {
         setIsNotificationOpen(false);
       }
 
@@ -66,8 +72,7 @@ function NavIcons() {
   }, []);
 
   return (
-    <div className="flex items-center gap-4 relative relative z-50">
-
+    <div className="flex items-center gap-4 relative z-50">
       {/* PROFILE */}
       <div ref={profileRef} className="relative">
         <Image
@@ -83,14 +88,14 @@ function NavIcons() {
       </div>
 
       {/* NOTIFICATION */}
-      <div ref={notificationRef} className="relative">
+      <div ref={notificationRef} className="relative cursor-pointer" onClick={viewNotification}>
         <Image
           src="/notification.png"
           alt="notification"
           width={22}
           height={22}
           className="cursor-pointer"
-          onClick={viewNotification}
+          
         />
         <div className="absolute -top-4 -right-4 w-6 h-6 bg-blue-800 rounded-full text-white text-sm flex items-center justify-center font-bold">
           3
@@ -100,18 +105,16 @@ function NavIcons() {
       </div>
 
       {/* CART */}
-      <div ref={cartRef} className="relative cursor-pointer">
-        <Image
-          src="/cart.png"
-          alt="cart"
-          width={22}
-          height={22}
-          onClick={() => {
-            setIsCartOpen((prev) => !prev);
-            setIsNotificationOpen(false);
-            setIsProfileOpen(false);
-          }}
-        />
+      <div
+        ref={cartRef}
+        className="relative cursor-pointer"
+        onClick={() => {
+          setIsCartOpen((prev) => !prev);
+          setIsNotificationOpen(false);
+          setIsProfileOpen(false);
+        }}
+      >
+        <Image src="/cart.png" alt="cart" width={22} height={22} />
 
         <div className="absolute -top-4 -right-4 w-6 h-6 bg-red-500 rounded-full text-white text-sm flex items-center justify-center font-bold">
           2
